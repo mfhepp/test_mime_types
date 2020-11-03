@@ -36,15 +36,15 @@ As of 2020-11-03, **all above files return the proper MIME type from their Githu
 
 On top of that, an HTTP HEAD request without any file extension returns the HTML version, which is good:
 
-```
+<pre>
 $ curl -I https://mfhepp.github.io/test_mime_types/test
 
 HTTP/1.1 200 OK
 ...
-**Content-Type: text/html;** charset=utf-8
+<b>Content-Type: text/html;</b> charset=utf-8
 Server: GitHub.com
 ...
-```
+</pre>
 
 ## References
 1. <https://www.w3.org/TR/rdf-syntax-grammar/#section-MIME-Type>
