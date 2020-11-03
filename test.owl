@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:gr="http://purl.org/goodrelations/v1#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:vcard="http://www.w3.org/2006/vcard/ns#"
+  xmlns:xml="http://www.w3.org/XML/1998/namespace"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:pto="http://www.productontology.org/id/" 
+  xmlns:wdrs="http://www.w3.org/2007/05/powder-s#"
+  xmlns:schema="http://schema.org/"
+> 
+<!-- OWL DL work-arounds instead of imports -->
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title" />
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/subject" />
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator" />
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license" />
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/rights" />
+<owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/contributor" />
+<owl:Class rdf:about="http://xmlns.com/foaf/0.1/Document" />
+<owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/primaryTopic" />
+<owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/page" />
+<owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/homepage" />
+<owl:AnnotationProperty rdf:about="http://www.w3.org/2007/05/powder-s#describedby" />
+<owl:Class rdf:about="http://schema.org/Product" />
+
+<!-- OWL 1 DL compatibility of the OWL2 deprecated property -->
+<owl:AnnotationProperty rdf:about="http://www.w3.org/2002/07/owl#deprecated" />
+
+   <foaf:Document rdf:about="http://www.productontology.org/">
+		<foaf:primaryTopic rdf:resource="http://www.productontology.org/#" />
+   </foaf:Document>
+
+  <rdf:Description rdf:about="http://www.productontology.org/#">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+	<owl:imports rdf:resource="http://purl.org/goodrelations/v1"/>
+    <rdfs:label xml:lang="en">The Product Types Ontology for Semantic Web-based E-Commerce</rdfs:label>
+    <dc:title xml:lang="en">PTO: The Product Types Ontology for Semantic Web-based E-Commerce</dc:title>
+    <rdfs:comment xml:lang="en">The Product Types Ontology: Good identifiers for product types based on Wikipedia
+
+This service provides GoodRelations-compatible class definitions for any type of product or service that has an entry in the English Wikipedia.
+
+Vocabulary:    http://www.productontology.org/#
+Namespace:     http://www.productontology.org/
+
+The Product Types Ontology is designed to be used in combination with GoodRelations, a standard vocabulary for the commercial aspects of offers.
+
+See http://purl.org/goodrelations/ for more information.</rdfs:comment>
+    <rdfs:seeAlso rdf:resource="http://purl.org/goodrelations/v1"/>
+    <dcterms:license rdf:resource="http://creativecommons.org/licenses/by-sa/3.0/"/>
+    <owl:versionInfo>2020-11-01T15:35:49.267432</owl:versionInfo>
+    <dc:contributor xml:lang="en">The class abstracts and translations of labels are taken from Wikipedia, the free encyclopedia.</dc:contributor>
+    <dc:creator xml:lang="en">Martin Hepp</dc:creator>
+    <dc:rights xml:lang="en">The class definition texts are taken from Wikipedia, the free encyclopedia under a Creative Commons Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0) license, see http://creativecommons.org/licenses/by-sa/3.0/. Accordingly, all ontology class definitions provided in here are available under the very same license.</dc:rights>
+    <dc:subject xml:lang="en">E-Commerce, E-Business, GoodRelations, Ontology, Wikipedia, DBPedia</dc:subject>
+  </rdf:Description>
+
+
+  <owl:Class rdf:about="http://www.productontology.org/id/Apple">
+	<rdfs:subClassOf rdf:resource="http://purl.org/goodrelations/v1#ProductOrService"/>
+	<rdfs:subClassOf rdf:resource="http://schema.org/Product"/>
+	<rdfs:label xml:lang="en">Apple</rdfs:label>
+	<rdfs:comment xml:lang="en">An apple is an edible fruit produced by an apple tree (Malus domestica). Apple trees are cultivated worldwide and are the most widely grown species in the genus Malus. The tree originated in Central Asia, where its wild ancestor, Malus sieversii, is still found today. Apples have been grown for thousands of years in Asia and Europe and were brought to North America by European colonists. Apples have religious and mythological significance in many cultures, including Norse, Greek, and European Christian tradition.
+Apple trees are large if grown from seed.  Generally, apple cultivars are propagated by grafting onto rootstocks, which control the size of the resulting tree. There are more than 7,500 known cultivars of apples, resulting in a range of desired characteristics. Different cultivars are bred for various tastes and use, including cooking, eating raw and cider production. Trees and fruit are prone to a number of fungal, bacterial and pest problems, which can be controlled by a number of organic and non-organic means. In 2010, the fruit&#39;s genome was sequenced as part of research on disease control and selective breeding in apple production.
+Worldwide production of apples in 2018 was 86 million tonnes, with China accounting for nearly half of the total. 
+
+(Source: Wikipedia, the free encyclopedia, see http://en.wikipedia.org/wiki/Apple)</rdfs:comment>
+	<rdfs:label xml:lang="af">Appel</rdfs:label>
+	<rdfs:label xml:lang="als">Apfel</rdfs:label>
+	<rdfs:label xml:lang="am">ፖም</rdfs:label>
+	<rdfs:label xml:lang="an">Mazana</rdfs:label>
+	<rdfs:label xml:lang="ang">Æppel</rdfs:label>
+	<rdfs:label xml:lang="ar">تفاح</rdfs:label>
+	<rdfs:label xml:lang="arc">ܚܙܘܪܐ</rdfs:label>
+	<rdfs:label xml:lang="arz">تفاح</rdfs:label>
+	<rdfs:label xml:lang="as">আপেল</rdfs:label>
+	<rdfs:label xml:lang="ast">Mazana</rdfs:label>
+
+	<foaf:homepage rdf:resource="http://www.productontology.org/doc/Apple.html"/>
+	<foaf:page rdf:resource="http://en.wikipedia.org/wiki/Apple"/>
+	<wdrs:describedby rdf:resource="http://www.productontology.org/doc/Apple.rdf"/>
+	<wdrs:describedby rdf:resource="http://www.productontology.org/doc/Apple.ttl"/>
+	<rdfs:isDefinedBy rdf:resource="http://www.productontology.org/#"/>
+	<rdfs:seeAlso rdf:resource="http://www.productontology.org/"/>
+	<rdfs:seeAlso rdf:resource="http://dbpedia.org/resource/Apple"/>
+	<rdfs:seeAlso rdf:resource="http://www.productontology.org/doc/Apple"/>	
+  </owl:Class>
+  <foaf:Document rdf:about="http://www.productontology.org/doc/Apple.rdf">
+		<foaf:primaryTopic rdf:resource="http://www.productontology.org/id/Apple" />
+  </foaf:Document>
+  <foaf:Document rdf:about="http://www.productontology.org/doc/Apple.ttl">
+		<foaf:primaryTopic rdf:resource="http://www.productontology.org/id/Apple" />
+  </foaf:Document>
+  <foaf:Document rdf:about="http://www.productontology.org/doc/Apple">
+		<foaf:primaryTopic rdf:resource="http://www.productontology.org/id/Apple" />
+  </foaf:Document>
+
+
+</rdf:RDF>

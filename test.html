@@ -1,0 +1,22 @@
+<!doctype html>
+<!-- test.html -->
+<html lang="en" 
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:gr="http://purl.org/goodrelations/v1#"
+    xmlns:vcard="http://www.w3.org/2006/vcard/ns#">
+<head>
+  <meta charset="utf-8">
+  <title>HTML5 Test Page with RDFa</title>
+</head>
+<body>
+<div typeof="gr:Brand" about="#brand">
+  <h1 property="gr:name">Miller</h1>
+  <div property="gr:description">Miller is the leading brand for foldable TV Sets
+and canoes.</div>
+  <div rel="http://xmlns.com/foaf/0.1/page"
+       resource="http://www.myshop.com/brands/miller/"></div>
+</div>
+</body>
+</html>

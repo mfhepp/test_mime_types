@@ -1,0 +1,31 @@
+# test.ttl
+
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix pto: <http://www.productontology.org/id/> .
+@prefix gr: <http://purl.org/goodrelations/v1#> .
+@prefix foo: <http://example.com/> .
+
+# The object
+foo:myObject a <http://www.productontology.org/id/Hammer> ;
+	a gr:SomeItems ;
+	gr:name "... a short name for the object ..."@en ;
+	gr:description "... a longer description ..."@en .
+
+# The agent (person or company) who is offering it
+foo:ACMECorp a gr:BusinessEntity ;
+	gr:legalName "ACME Corp" ;
+	gr:offers foo:Offer .
+
+# The offer to sell it
+foo:Offer a gr:Offering ;
+	gr:includes foo:myObject;
+	foaf:page <http://URI_of_the_page_containing_the_offer.com>;
+	gr:hasBusinessFunction gr:Sell ;
+	gr:validFrom "2011-01-24T00:00:00+01:00"^^xsd:dateTime ;
+	gr:validThrough "2011-12-24T00:00:00+01:00"^^xsd:dateTime ;
+	gr:hasPriceSpecification
+         [ a gr:UnitPriceSpecification ;
+           gr:hasCurrency "USD"^^xsd:string ;
+           gr:hasCurrencyValue "19.99"^^xsd:float ;
+           gr:validThrough "2011-12-24T00:00:00+01:00"^^xsd:dateTime ] .
