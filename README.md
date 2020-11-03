@@ -4,6 +4,8 @@ The purpose of this repository is to test whether typical MIME types for Linked 
 
 The source code is [on Github](https://github.com/mfhepp/test_mime_types).
 
+The actual Github Pages version is at https://mfhepp.github.io/test_mime_types/.
+
 ## Files List
 
 |File Format|Filename|Expected MIME Type|Comment|
