@@ -10,7 +10,7 @@ The actual Github Pages version is at https://mfhepp.github.io/test_mime_types/.
 
 |File Format|Filename|Expected MIME Type|Comment|
 |---|---|---|---|
-|RDF in RDF/XML | test.rdf | application/rdf+xml  |   |
+|RDF in RDF/XML | [test.rdf](test.rdf) | application/rdf+xml  |   |
 |OWL in RDF/XML | test.owl | application/owl+xml  |   |
 |Turtle         | test.ttl | text/turtle |   |
 |N3             | test.n3 | text/n3 |   |
