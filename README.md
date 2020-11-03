@@ -4,17 +4,17 @@ The purpose of this repository is to test whether typical MIME types for Linked 
 
 The source code is [on Github](https://github.com/mfhepp/test_mime_types).
 
-The actual Github Pages version is at https://mfhepp.github.io/test_mime_types/.
+The actual Github Pages version is at [https://mfhepp.github.io/test_mime_types/](https://mfhepp.github.io/test_mime_types/).
 
 ## Files List
 
 |File Format|Filename|Expected MIME Type|Comment|
 |---|---|---|---|
 |RDF in RDF/XML | [test.rdf](test.rdf) | application/rdf+xml  |   |
-|OWL in RDF/XML | test.owl | application/owl+xml  |   |
-|Turtle         | test.ttl | text/turtle |   |
-|N3             | test.n3 | text/n3 |   |
-|JSON-LD        | test.jsonld | application/ld+json  |   |
+|OWL in RDF/XML | [test.owl](test.owl) | application/owl+xml  |   |
+|Turtle         | [test.ttl](test.ttl) | text/turtle |   |
+|N3             | [test.n3](test.n3) | text/n3 |   |
+|JSON-LD        | [test.jsonld](test.jsonld) | application/ld+json  |   |
 
 
 ## References
