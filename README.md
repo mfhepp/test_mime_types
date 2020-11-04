@@ -1,10 +1,11 @@
 # Test for MIME Support in Github Pages
 
+**Author:** Martin Hepp, martin.hepp@unibw.de
+
 The purpose of this repository is to test whether typical MIME types for Linked Open Data and the Semantic Web are properly derived from local filename extensions and lead to correct MIME type information in the HTTP Response Message header data.
 
-The source code is [on Github](https://github.com/mfhepp/test_mime_types).
-
-The actual Github Pages version is at <https://mfhepp.github.io/test_mime_types/>.
+**Source code on Github:** <https://github.com/mfhepp/test_mime_types>
+**Github Pages version:**  <https://mfhepp.github.io/test_mime_types/>
 
 **Note:** The actual payload of the examples is just quickly compiled from trivial examples in the respective specifications or other resources. They might not validate and have no meaningful content.
 
