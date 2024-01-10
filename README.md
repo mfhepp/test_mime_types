@@ -156,4 +156,4 @@ Vary: Accept-Encoding
 ## Changelog
 
 - 2020-11-04: Initial version
-- 2024-01-10: Cosmetic fixes
+- 2024-01-10: Cosmetic fixes, new theme
