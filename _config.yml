@@ -1,2 +1,13 @@
-# test
+title: Test for MIME Support in Github Pages
+author:
+  name: Martin Hepp
+  email: martin.hepp@unibw.de
+
+# The `>` after `description:` means to ignore line-breaks until next key.
+# If you want to omit the line-break after the end of text, use `>-` instead.
+description: >
+  Using Github Pages for publishing Linked Open Data, Ontologies, and Semantic Web projects. Experiments regarding the
+  support of MIME types (aka media types or IANA media types) and HTTP Content Negotiation for RDF/XML, JSON-LD, Turtle, N3, 
+  and NTriples syntaxes.
+
 theme: minima
