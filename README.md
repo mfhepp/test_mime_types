@@ -5,6 +5,7 @@
 The purpose of this repository is to test whether typical MIME types for Linked Open Data and the Semantic Web are properly derived from local filename extensions and lead to correct MIME type information in the HTTP Response Message header data.
 
 **Source code on Github:** <https://github.com/mfhepp/test_mime_types>
+
 **Github Pages version:**  <https://mfhepp.github.io/test_mime_types/>
 
 **Note:** The actual payload of the examples is just quickly compiled from trivial examples in the respective specifications or other resources. They might not validate and have no meaningful content.
@@ -35,7 +36,7 @@ $ curl -I https://mfhepp.github.io/test_mime_types/test.n3
 $ curl -I https://mfhepp.github.io/test_mime_types/test.jsonld
 ```
 
-As of 2020-11-03, **all above files return the proper MIME type from their Github pages URIs.**
+As of 2024-01-10, **all above files return the proper MIME type from their Github pages URIs.**
 
 So Github Pages is able to recognize the proper MIME type from the file extension and signal it back to the client in the HTTP response header.
 
@@ -89,7 +90,7 @@ $ curl -I -H "Accept: text/n3" https://mfhepp.github.io/test_mime_types/test
 $ curl -I -H "Accept: application/ld+json" https://mfhepp.github.io/test_mime_types/test
 </pre>
 
-**Status 2020-11-04:** Unfortunately, Github Pages always returns the HTML version and ignores the indicated MIME type preferences:
+**Status 2024-01-10:** Unfortunately, Github Pages always returns the HTML version and ignores the indicated MIME type preferences:
 
 <pre>
 
@@ -141,10 +142,18 @@ Age: 0
 Vary: Accept-Encoding
 </pre>
 
+
 ## References
+
 1. <https://www.w3.org/TR/rdf-syntax-grammar/#section-MIME-Type>
 2. <https://www.w3.org/TR/owl2-xml-serialization/>
 3. <https://www.w3.org/TR/turtle/>
 4. <https://www.w3.org/TR/n-triples/>
 5. <https://www.w3.org/TeamSubmission/n3/>
 6. <https://www.w3.org/TR/json-ld11/>
+
+
+## Changelog
+
+- 2020-11-04: Initial version
+- 2024-01-10: Cosmetic fixes
