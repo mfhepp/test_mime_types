@@ -12,14 +12,15 @@ The purpose of this repository is to test and document whether typical MIME type
 
 ## Files List
 
-|File Format|Filename|Expected MIME Type|Github MIME |Comment|
-|---|---|---|---|
-|RDF in RDF/XML | [test.rdf](test.rdf) | application/rdf+xml  | application/rdf+xml | **OK** |
-|OWL in RDF/XML | [test.owl](test.owl) | application/owl+xml  | application/rdf+xml| **OK**|
-|Turtle         | [test.ttl](test.ttl) | text/turtle |text/turtle| **OK** |
-|NTriples       | [test.nt](test.nt) | application/n-triples | application/n-triples| **OK** |
-|N3             | [test.n3](test.n3) | text/n3 | text/n3 | **OK** |
-|JSON-LD        | [test.jsonld](test.jsonld) | application/ld+json | application/ld+json | **OK** |
+
+| File Format | Filename | Expected MIME Type | Github MIME | Comment |
+| --- | --- | --- | --- | --- |
+| RDF in RDF/XML |  [test.rdf](test.rdf) | application/rdf+xml  | application/rdf+xml | **OK** |
+| OWL in RDF/XML |  [test.owl](test.owl) | application/owl+xml  | application/rdf+xml| **OK**|
+| Turtle         |  [test.ttl](test.ttl) | text/turtle |text/turtle| **OK** |
+| NTriples       |  [test.nt](test.nt) | application/n-triples | application/n-triples| **OK** |
+| N3             |  [test.n3](test.n3) | text/n3 | text/n3 | **OK** |
+| JSON-LD        |  [test.jsonld](test.jsonld) | application/ld+json | application/ld+json | **OK** |
 
 ## Status of Github Pages Support
 
