@@ -16,8 +16,8 @@ The purpose of this repository is to test and document whether typical MIME type
 | File Format | Filename | Expected MIME Type | Github MIME | Comment |
 | --- | --- | --- | --- | --- |
 | RDF in RDF/XML |  [test.rdf](test.rdf) | application/rdf+xml  | application/rdf+xml | **OK** |
-| OWL in RDF/XML |  [test.owl](test.owl) | application/owl+xml  | application/rdf+xml| **OK**|
-| Turtle         |  [test.ttl](test.ttl) | text/turtle |text/turtle| **OK** |
+| OWL in RDF/XML |  [test.owl](test.owl) | application/owl+xml  | application/rdf+xml| **OK** |
+| Turtle         |  [test.ttl](test.ttl) | text/turtle | text/turtle| **OK** |
 | NTriples       |  [test.nt](test.nt) | application/n-triples | application/n-triples| **OK** |
 | N3             |  [test.n3](test.n3) | text/n3 | text/n3 | **OK** |
 | JSON-LD        |  [test.jsonld](test.jsonld) | application/ld+json | application/ld+json | **OK** |
@@ -37,7 +37,11 @@ $ curl -I https://mfhepp.github.io/test_mime_types/test.n3
 $ curl -I https://mfhepp.github.io/test_mime_types/test.jsonld
 ```
 
-As of 2024-01-10, **all above files return the proper MIME type from their Github pages URIs.**
+There is also a Python script [`check_mime_types.py`](./check_mime_types.py) for this purpose.
+
+As of 2024-10-31, **all above files return the proper MIME type from their Github pages URIs.**
+
+For files with the extention `.owl`, Github returns `application/rdf+xml` instead of `application/owl+xml `, but that's technically fine.
 
 So Github Pages is able to recognize the proper MIME type from the file extension and signal it back to the client in the HTTP response header.
 
@@ -56,10 +60,9 @@ The very simple case of returning HTML as a default for an HTTP HEAD request wit
 <pre>
 $ curl -I https://mfhepp.github.io/test_mime_types/test
 
-HTTP/1.1 200 OK
+HTTP/2 200 
 ...
-<b>Content-Type: text/html;</b> charset=utf-8
-Server: GitHub.com
+<b>content-type: text/html; charset=utf-8</b>
 ...
 </pre>
 
@@ -83,34 +86,40 @@ for `text/html` and all available RDF syntaxes:
 - application/ld+json
 
 <pre>
-$ curl -I -H "Accept: application/rdf+xml" https://mfhepp.github.io/test_mime_types/test
-$ curl -I -H "Accept: application/owl+xml" https://mfhepp.github.io/test_mime_types/test
-$ curl -I -H "Accept: text/turtle" https://mfhepp.github.io/test_mime_types/test
-$ curl -I -H "Accept: application/n-triples" https://mfhepp.github.io/test_mime_types/test
-$ curl -I -H "Accept: text/n3" https://mfhepp.github.io/test_mime_types/test
-$ curl -I -H "Accept: application/ld+json" https://mfhepp.github.io/test_mime_types/test
+curl -I -H "Accept: application/rdf+xml" https://mfhepp.github.io/test_mime_types/test
+curl -I -H "Accept: application/owl+xml" https://mfhepp.github.io/test_mime_types/test
+curl -I -H "Accept: text/turtle" https://mfhepp.github.io/test_mime_types/test
+curl -I -H "Accept: application/n-triples" https://mfhepp.github.io/test_mime_types/test
+curl -I -H "Accept: text/n3" https://mfhepp.github.io/test_mime_types/test
+curl -I -H "Accept: application/ld+json" https://mfhepp.github.io/test_mime_types/test
 </pre>
 
-**Status 2024-01-10:** Unfortunately, Github Pages always returns the HTML version and ignores the indicated MIME type preferences:
+There is also a bash script [`check_conneg.sh`](./check_conneg.sh)  for this purpose.
+
+**Status 2024-10-31:** Unfortunately, Github Pages always returns the HTML version and ignores the indicated MIME type preferences:
 
 <pre>
 
 $ curl -I -H <b>"Accept: application/rdf+xml"</b> https://mfhepp.github.io/test_mime_types<b>/test</b>
 
-HTTP/1.1 200 OK
-Connection: keep-alive
-Content-Length: 690
-<b>Content-Type: text/html; charset=utf-8</b>
-Server: GitHub.com
-Last-Modified: Tue, 03 Nov 2020 16:30:18 GMT
-ETag: "5fa1859a-2b2"
-Access-Control-Allow-Origin: *
-Expires: Wed, 04 Nov 2020 15:43:50 GMT
-Cache-Control: max-age=600
-Accept-Ranges: bytes
-Date: Wed, 04 Nov 2020 15:48:18 GMT
-Via: 1.1 varnish
-Vary: Accept-Encoding
+HTTP/2 200 
+server: GitHub.com
+<b>content-type: text/html; charset=utf-8</b>
+permissions-policy: interest-cohort=()
+last-modified: Thu, 31 Oct 2024 11:56:02 GMT
+access-control-allow-origin: *
+etag: "67237052-2b2"
+expires: Thu, 31 Oct 2024 12:28:16 GMT
+cache-control: max-age=600
+...
+accept-ranges: bytes
+age: 509
+date: Thu, 31 Oct 2024 12:26:45 GMT
+via: 1.1 varnish
+...
+vary: Accept-Encoding
+...
+content-length: 690
 </pre>
 
 #### 303 Redirects 
@@ -126,21 +135,23 @@ Again, **Github Pages simply returns the static file mapped to that URI, in this
 <pre>
 $ curl -I -H <b>"Accept: application/rdf+xml"</b> https://mfhepp.github.io/test_mime_types<b>/test.jsonld</b>
 
-HTTP/1.1 200 OK
-Connection: keep-alive
-Content-Length: 221
-<b>Content-Type: application/ld+json</b>
-Server: GitHub.com
-Last-Modified: Tue, 03 Nov 2020 16:30:18 GMT
-ETag: "5fa1859a-dd"
-Access-Control-Allow-Origin: *
-Expires: Wed, 04 Nov 2020 16:02:11 GMT
-Cache-Control: max-age=600
-Accept-Ranges: bytes
-Date: Wed, 04 Nov 2020 15:52:11 GMT
-Via: 1.1 varnish
-Age: 0
-Vary: Accept-Encoding
+HTTP/2 200 
+server: GitHub.com
+<b>content-type: application/ld+json</b>
+permissions-policy: interest-cohort=()
+last-modified: Thu, 31 Oct 2024 11:56:02 GMT
+access-control-allow-origin: *
+etag: "67237052-dd"
+expires: Thu, 31 Oct 2024 12:13:31 GMT
+cache-control: max-age=600
+...
+accept-ranges: bytes
+age: 203
+date: Thu, 31 Oct 2024 12:28:25 GMT
+via: 1.1 varnish
+...
+vary: Accept-Encoding
+...
 </pre>
 
 
@@ -158,3 +169,4 @@ Vary: Accept-Encoding
 
 - 2020-11-04: Initial version
 - 2024-01-10: Updated status, cosmetic fixes, new theme, wording
+- 2024-10-31: Updated status, fixed table, added scripts for automating tests
